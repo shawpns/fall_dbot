@@ -43,33 +43,7 @@ async def on_member_join(member):
         if str(channel) == "✺┊ᴡᴇʟᴄᴏᴍᴇ":
             await channel.send(f"""Welcome to the server {member.mention}""")
             
-@bot.event
-async def on_message(message):
-    global messages
-    messages += 1
 
-    id = client.get_guild(725931924027080725)
-    channels = ["setup"]
-    valid_users = ["ShaW#0768"]
-    bad_words = ["bad", "stop", "45", "kutta", "sala"]
-
-    for word in bad_words:
-        if message.content.count(word) > 0:
-            print("A bad word was said")
-            await message.channel.purge(limit=1)
-
-    if message.content == "+hey":
-        embed = discord.Embed(title="ShaW Ka Area", description="Abe Sale, Chal be")
-        embed.add_field(name="!hello", value="Greets the user")
-        embed.add_field(name="!users", value="Prints number of users")
-        await message.channel.send(content=None, embed=embed)
-
-    if str(message.channel) in channels and str(message.author) in valid_users:
-        if message.content.find("!hello") != -1:
-            await message.channel.send("Hi") 
-        elif message.content == "!users":
-            await message.channel.send(f"""# of Members: {id.member_count}""")
-    
     
 
 @bot.command(pass_context=True)
