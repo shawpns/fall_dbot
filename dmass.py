@@ -63,7 +63,7 @@ newUserMessage = """ HEY SALE WHAT'S UP """
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
     try: 
-    await client.send_message(member, newUserMessage)
+    await bot.send_message(member, newUserMessage)
     print("Sent message to " + member.name)
     except:
         print("Couldn't message " + member.name)
