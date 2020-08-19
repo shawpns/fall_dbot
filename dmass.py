@@ -4,6 +4,7 @@ import platform
 import random
 import time
 import asyncio
+import logging
 
 bot = commands.Bot(command_prefix='+', case_insensitive=True)
 
@@ -57,22 +58,23 @@ async def send(ctx, *, content: str):
             await ctx.send("DM can't send to : {} :x: ".format(member))
             
             
-newUserMessage = """ Abbe sale WHAT'S UP """
+newUserDMMessage = "Welcome DM by ShaW"
 
+#Public Welcome
 @bot.event
 async def on_member_join(member):
-    print("Recognised that a member called " + member.name + " joined")
-    try:
-        await bot.send_message(member, newUserMessage)
-    print("Sent message to" + member.name)
-    except:
-        print("Couldn't message " + member.name)
+print("Recognised that a member called " + member.name + " joined")
+await client.send_message(member, newUserDMMessage)
+await client.send_message(discord.Object(id='745689723690942514'), 'Welcome!')
+print("Sent message to " + member.name)
+print("Sent message about " + member.name + " to #welcome")
 
-    # give member the steam role here
-    ## to do this the bot must have 'Manage Roles' permission on server, and role to add must be lower than bot's top role
-    role = discord.utils.get(member.server.roles, name="special role")
-    await client.add_roles(member, role)
-    print("Added role '" + role.name + "' to " + member.name)
+#Mod Leave Announcement
+@bot.event
+async def on_member_remove(member):
+print("Recognised that a member called " + member.name + " left")
+await client.send_message(discord.Object(id='745689723690942514'), member.name + ' left')
+print("Sent message to #welcome")
 
 
 
