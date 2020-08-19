@@ -23,28 +23,6 @@ async def on_command_error(ctx, error):
     if isinstance(error, ignored):
         return
 
-@bot.event
-async def on_member_update(before, after):
-    n = after.nick
-    if n:
-        if n.lower().count("faltu") > 0:
-            last = before.nick
-            if last:
-                await after.edit(nick=last)
-            else:
-                await after.edit(nick="sala kutta")
-                
-                
-@bot.event
-async def on_member_join(member):
-    global joined
-    joined += 1
-    for channel in member.server.channels:
-        if str(channel) == "✺┊ᴡᴇʟᴄᴏᴍᴇ":
-            await channel.send(f"""Welcome to the server {member.mention}""")
-            
-
-    
 
 @bot.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
