@@ -56,23 +56,4 @@ async def send(ctx, *, content: str):
         except:
             await ctx.send("DM can't send to : {} :x: ".format(member))
             
-            
-
-            
-            
-@bot.command(brief='announce [message]', pass_context=True)
-async def announce(ctx, message : str):
-    print(str(message))
-    if(str(ctx.message.author) == user):
-        await ctx.send('User Authentication Successful')
-        try:
-            for chan in channels:
-                try:
-                    channel = bot.get_channel(chan)
-                    info = discord.Embed(title='New Announcement!', description=str(message), color=0xFFFFFF)
-                    await channel.send(embed=info)
-                except:
-                    await ctx.send("Error: " + str(chan))
-
-
 bot.run("NzQzNTAwOTQ5NTk0NTcwODMy.XzVlNw.5TV_eZLRG6ajbsxyIJulrT2Ksj8")
