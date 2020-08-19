@@ -43,7 +43,7 @@ async def on_member_join(member):
         if str(channel) == "✺┊ᴡᴇʟᴄᴏᴍᴇ":
             await channel.send(f"""Welcome to the server {member.mention}""")
             
-@client.event
+@bot.event
 async def on_message(message):
     global messages
     messages += 1
