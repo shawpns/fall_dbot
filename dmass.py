@@ -72,12 +72,7 @@ async def announce(ctx, message : str):
                     info = discord.Embed(title='New Announcement!', description=str(message), color=0xFFFFFF)
                     await channel.send(embed=info)
                 except:
-                    Exception as e:
-                        await ctx.send(e)
-                        await ctx.send("Error: " + str(chan))
-                except:
-                    Exception as e:
-                        await ctx.send(e)
+                    await ctx.send("Error: " + str(chan))
 
 
 
