@@ -73,5 +73,6 @@ async def announce(ctx, message : str):
                     await channel.send(embed=info)
                 except:
                     await ctx.send("Error: " + str(chan))
-                    
+
+
 bot.run("NzQzNTAwOTQ5NTk0NTcwODMy.XzVlNw.5TV_eZLRG6ajbsxyIJulrT2Ksj8")
