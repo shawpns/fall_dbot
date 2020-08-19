@@ -58,23 +58,23 @@ async def send(ctx, *, content: str):
             await ctx.send("DM can't send to : {} :x: ".format(member))
             
             
-newUserDMMessage = "Welcome DM by ShaW"
+newUserDMMessage = "WELCOME to SERVER!"
 
 #Public Welcome
 @bot.event
 async def on_member_join(member):
-print("Recognised that a member called" + member.name + "joined")
-await client.send_message(member, newUserDMMessage)
-await client.send_message(discord.Object(id='745689723690942514'), 'Welcome!')
-print("Sent message to " + member.name)
-print("Sent message about " + member.name + " to #welcome")
+    print("Recognized that " + member.name + " joined")
+    await client.send_message(member, newUserDMMessage)
+    await client.send_message(discord.Object(id='CHANNELID'), 'Welcome!')
+    print("Sent message to " + member.name)
+    print("Sent message about " + member.name + " to #CHANNEL")
 
 #Mod Leave Announcement
 @bot.event
 async def on_member_remove(member):
-print("Recognised that a member called " + member.name + " left")
-await client.send_message(discord.Object(id='745689723690942514'), member.name + ' left')
-print("Sent message to #welcome")
+    print("Recognized that " + member.name + " left")
+    await client.send_message(discord.Object(id='CHANNELID'), '**' + member.mention + '** just left.')
+    print("Sent message to #CHANNEL")
 
 
 
