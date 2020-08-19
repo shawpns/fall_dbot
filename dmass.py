@@ -55,6 +55,25 @@ async def send(ctx, *, content: str):
             await ctx.send("Message Sent to Targets")
         except:
             await ctx.send("DM can't send to : {} :x: ".format(member))
+            
+            
+newUserMessage = """ HEY SALE WHAT'S UP """
+
+@bot.event
+async def on_member_join(member):
+    print("Recognised that a member called " + member.name + " joined")
+    try: 
+    await client.send_message(member, newUserMessage)
+    print("Sent message to " + member.name)
+    except:
+        print("Couldn't message " + member.name)
+
+    # give member the steam role here
+    ## to do this the bot must have 'Manage Roles' permission on server, and role to add must be lower than bot's top role
+    role = discord.utils.get(member.server.roles, name="special role")
+    await client.add_roles(member, role)
+    print("Added role '" + role.name + "' to " + member.name)
+
 
 
 
