@@ -75,7 +75,8 @@ async def announce(ctx, message : str):
                     Exception as e:
                         await ctx.send(e)
                         await ctx.send("Error: " + str(chan))
-                        except Exception as e:
+                        except:
+                            Exception as e:
                             await ctx.send(e)
 
 
