@@ -63,7 +63,7 @@ newUserDMMessage = "Welcome DM by ShaW"
 #Public Welcome
 @bot.event
 async def on_member_join(member):
-print("Recognised that a member called " + member.name + " joined")
+print("Recognised that a member called" + member.name + "joined")
 await client.send_message(member, newUserDMMessage)
 await client.send_message(discord.Object(id='745689723690942514'), 'Welcome!')
 print("Sent message to " + member.name)
