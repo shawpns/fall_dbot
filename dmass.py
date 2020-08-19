@@ -61,23 +61,21 @@ async def send(ctx, *, content: str):
             
             
 @bot.command(brief='announce [message]', pass_context=True)
-    async def announce(ctx, message : str):
-            print(str(message))
-            if(str(ctx.message.author) == user):
-                    await ctx.send('User Authentication Successful')
-                    try:
-                            for chan in channels:
-                                    try:
-                                            channel = bot.get_channel(chan)
-                                            info = discord.Embed(title='New Announcement!', description=str(message), color=0xFFFFFF)
-                                            await channel.send(embed=info)
-                                    except Exception as e:
-                                            await ctx.send(e)
-                                            await ctx.send("Error: " + str(chan))
+async def announce(ctx, message : str):
+    print(str(message))
+    if(str(ctx.message.author) == user):
+        await ctx.send('User Authentication Successful')
+        try:
+            for chan in channels:
+                try:
+                    channel = bot.get_channel(chan)
+                    info = discord.Embed(title='New Announcement!', description=str(message), color=0xFFFFFF)
+                    wait channel.send(embed=info)
                     except Exception as e:
+                        await ctx.send(e)
+                        await ctx.send("Error: " + str(chan))
+                        except Exception as e:
                             await ctx.send(e)
-
-
 
 
 
