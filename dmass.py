@@ -57,14 +57,14 @@ async def send(ctx, *, content: str):
             await ctx.send("DM can't send to : {} :x: ".format(member))
             
             
-newUserMessage = """ HEY SALE WHAT'S UP """
+newUserMessage = """ Abbe sale WHAT'S UP """
 
 @bot.event
 async def on_member_join(member):
     print("Recognised that a member called " + member.name + " joined")
     try:
         await bot.send_message(member, newUserMessage)
-    print("Sent message to " + member.name)
+    print("Sent message to" + member.name)
     except:
         print("Couldn't message " + member.name)
 
