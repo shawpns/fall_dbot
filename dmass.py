@@ -3,6 +3,7 @@ from discord.ext import commands
 import platform
 import random
 import time
+import asyncio
 
 bot = commands.Bot(command_prefix='+', case_insensitive=True)
 
