@@ -56,4 +56,11 @@ async def send(ctx, *, content: str):
         except:
             await ctx.send("DM can't send to : {} :x: ".format(member))
             
+@bot.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Hi {member.name}, welcome to my Discord server!'
+    )
+            
 bot.run("NzQzNTAwOTQ5NTk0NTcwODMy.XzVlNw.5TV_eZLRG6ajbsxyIJulrT2Ksj8")
