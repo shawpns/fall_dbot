@@ -65,7 +65,7 @@ async def on_member_join(member):
      
 @bot.command(name='create-channel')
 @commands.has_role('❣')
-async def create_channel(ctx, channel_name='real-python'):
+async def create_channel(ctx, channel_name='shaw-ka-area'):
     guild = ctx.guild
     existing_channel = discord.utils.get(guild.channels, name=channel_name)
     if not existing_channel:
