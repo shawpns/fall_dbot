@@ -14,6 +14,12 @@ async def on_ready():
           f'Connected to {str(len(set(bot.get_all_members())))} users')
     print('--------')
     print('CREATED AND HOSTED BY ShaW')
+    
+@bot.event
+async def on_ready():
+    activity = discord.Game(name="Netflix", type=3)
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="SEX"))
+    print("Bot is ready!")
 
 
 @bot.event
