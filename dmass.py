@@ -9,8 +9,8 @@ bot = commands.Bot(command_prefix='+', case_insensitive=True)
     
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="YouTube", type=3)
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="despacito | {os.getenv('+')}help"))
+    activity = discord.Game(name="YouTube", type=1)
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="YouTube......Type '+help' for commands"))
     print(f'Logged in as {bot.user.name}(ID: +{bot.user.id}) |'
           f'Connected to {str(len(bot.guilds))} servers |'
           f'Connected to {str(len(set(bot.get_all_members())))} users')
