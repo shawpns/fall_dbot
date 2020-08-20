@@ -18,7 +18,7 @@ async def on_ready():
 @bot.event
 async def on_ready():
     activity = discord.Game(name="Netflix", type=3)
-    await bot.change_presence(activity=discord.Streaming(name="ON YouTube", url=https://www.youtube.com/channel/UCpSINMoznmQgX0UPKbQOecQ))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="despacito"))
     print("Bot is ready!")
 
 
