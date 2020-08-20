@@ -6,14 +6,6 @@ import time
 import asyncio
 
 bot = commands.Bot(command_prefix='+', case_insensitive=True)
-
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user.name}(ID: +{bot.user.id}) |'
-          f'Connected to {str(len(bot.guilds))} servers |'
-          f'Connected to {str(len(set(bot.get_all_members())))} users')
-    print('--------')
-    print('CREATED AND HOSTED BY ShaW')
     
 @bot.event
 async def on_ready():
