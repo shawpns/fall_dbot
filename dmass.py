@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix='+', case_insensitive=True)
     
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="Netflix", type=3)
+    activity = discord.Game(name="YouTube", type=3)
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="despacito"))
     print(f'Logged in as {bot.user.name}(ID: +{bot.user.id}) |'
           f'Connected to {str(len(bot.guilds))} servers |'
