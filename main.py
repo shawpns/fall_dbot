@@ -79,4 +79,4 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
         await ctx.send('You do not have the correct role for this command.')
         
-bot.run("NzQzNTAwOTQ5NTk0NTcwODMy.XzVlNw.5TV_eZLRG6ajbsxyIJulrT2Ksj8")
+bot.run("#########################")
